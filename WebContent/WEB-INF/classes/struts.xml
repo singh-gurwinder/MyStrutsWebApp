@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<default-action-ref name="index" />
+
+		<global-results>
+			<result name="error">tiles.errorPage</result>
+		</global-results>
+
+		<action name="viewdeleteuser" class="com.kuts.ViewDeleteUser">
+			<result name="getUserID" type="tiles">tiles.getUserIDPage</result>
+			<result name="viewUser" type="tiles">tiles.viewDeleteUserPage</result>
+			<result name="delete" type="tiles">tiles.showResultPage</result>
+		</action>
+		<action name="viewallusers" class="com.kuts.ViewAllUsers">
+			<result name="success" type="tiles">tiles.viewAllUsersPage</result>
+			<result name="failed" type="tiles">tiles.showResultPage</result>
+		</action>
+		<action name="index">
+			<result type="tiles">tiles.mainLayout</result>
+		</action>
+		<action name="adduserdetails" class="com.kuts.AddUserDetails"
+			method="execute">
+			<result name="input" type="tiles">tiles.addUserDetailsPage</result>
+			<result name="success" type="tiles">tiles.showResultPage</result>
+		</action>
+		<action name="edituser" class="com.kuts.EditUser" method="execute">
+			<result name="getuserid" type="tiles">tiles.selectUserPage</result>
+			<result name="input" type="tiles">tiles.showUserPage</result>
+			<result name="success" type="tiles">tiles.showResultPage</result>
+		</action>
+	</package>
+
+	<!-- Add packages here -->
+
+</struts>

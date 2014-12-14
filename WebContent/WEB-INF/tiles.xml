@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <definition name="tiles.mainLayout" template="/templates/mainTemplate.jsp">
+      <put-attribute name="title"  value="Ice Bird's Heaven"/>
+      <put-attribute name="banner" value="/templates/components/header.jsp"/>
+      <put-attribute name="menu"   value="/templates/components/menu.jsp"/>
+      <put-attribute name="body"   value="/templates/components/body.jsp"/>
+      <put-attribute name="footer"   value="/templates/components/footer.jsp"/>
+   </definition>
+   
+   <definition name="tiles.showResultPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/showresult.jsp"/>
+   </definition>
+   
+   <definition name="tiles.viewAllUsersPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/viewallusers.jsp"/>
+   </definition>
+   
+   <definition name="tiles.viewDeleteUserPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/viewdeleteuser.jsp"/>
+   </definition>
+   
+   <definition name="tiles.showUserPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/showuser.jsp"/>
+   </definition>
+   
+   <definition name="tiles.selectUserPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/selectuser.jsp"/>
+   </definition>
+   
+   <definition name="tiles.getUserIDPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/getuserid.jsp"/>
+   </definition>
+   
+   <definition name="tiles.addUserDetailsPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/adduserdetails.jsp"/>
+   </definition>
+   
+   <definition name="tiles.errorPage" extends="tiles.mainLayout">
+      <put-attribute name="body"   value="/error.jsp"/>
+   </definition>
+
+  
+</tiles-definitions>

@@ -1,0 +1,2 @@
+MyStrutsWebApp
+==============
